@@ -1,34 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
+import contactsJSON from "./contacts.json"
 
 function App() {
-  const [count, setCount] = useState(0)
+  const firstFive = contactsJSON.slice(0, 5);
+  console.log(firstFive);
 
-  return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+
+  return <div className='App'>
+    <h1>IronContacts</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Picture</th>
+          <th>Name</th>
+          <th>Popularity</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {firstFive.map((element) => {
+            return (
+              <tr key={element.id} className="table">
+                <td>
+                    <img src={element.pictureUrl} alt="{element.name}" />
+                  </td>
+                <td>{element.name}</td>
+                <td>{element.popularity}</td>
+              </tr>
+            )
+          })}
+        </tbody>
+
+    </table>
+  
+  </div>
 }
-
 export default App
