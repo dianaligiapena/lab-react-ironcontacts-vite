@@ -2,8 +2,8 @@ import './App.css'
 import contactsJSON from "./contacts.json"
 
 function App() {
-  const firstFive = contactsJSON.slice(0, 5);
-  console.log(firstFive);
+  const firstSix = contactsJSON.slice(0, 6);
+  console.log(firstSix);
 
 
   return <div className='App'>
@@ -15,11 +15,13 @@ function App() {
           <th>Picture</th>
           <th>Name</th>
           <th>Popularity</th>
+          <th>Won Oscar</th>
+          <th>Won Emmy</th>
         </tr>
       </thead>
 
       <tbody>
-        {firstFive.map((element) => {
+        {firstSix.map((element) => {
             return (
               <tr key={element.id} className="table">
                 <td>
@@ -27,6 +29,8 @@ function App() {
                   </td>
                 <td>{element.name}</td>
                 <td>{element.popularity}</td>
+                <td>{element.wonOscar? "🏆":""}</td>
+                <td>{element.wonEmmy? "🏆":""}</td>
               </tr>
             )
           })}
