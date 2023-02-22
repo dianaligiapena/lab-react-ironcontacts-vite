@@ -44,16 +44,16 @@ function App() {
       </thead>
 
       <tbody>
-        {contacts.map((element) => {
+        {contacts.map(( { id, pictureUrl, name, popularity, wonOscar, wonEmmy } ) => {
             return (
-              <tr key={element.id} className="table">
+              <tr key={id} className="table">
                 <td>
-                    <img src={element.pictureUrl} alt="{element.name}" />
+                    <img src={pictureUrl} alt="{name}" />
                   </td>
-                <td>{element.name}</td>
-                <td>{element.popularity}</td>
-                <td>{element.wonOscar? "🏆":""}</td>
-                <td>{element.wonEmmy? "🏆":""}</td>
+                <td>{name}</td>
+                <td>{popularity}</td>
+                <td>{wonOscar? "🏆":"🙅"}</td>
+                <td>{wonEmmy? "🏆":"🙅"}</td>
               </tr>
             )
           })}
