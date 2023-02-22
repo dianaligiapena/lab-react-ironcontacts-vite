@@ -27,9 +27,9 @@ function App() {
     <h1>IronContacts</h1>
 
     <div>
-      <button onClick={addRandomContact}>Add Random Contact</button>
-      <button onClick={sortByPopularity}>Sort By Popularity</button>
-      <button onClick={sortByName}>Sort By Name</button>
+      <button type='button' onClick={addRandomContact}>Add Random Contact</button>
+      <button type='button' onClick={sortByPopularity}>Sort By Popularity</button>
+      <button type='button' onClick={sortByName}>Sort By Name</button>
     </div>
 
     <table>
